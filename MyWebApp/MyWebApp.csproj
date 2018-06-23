@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\ts\principal.ts" />
+    <Content Remove="wwwroot\ts\produto.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\src\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\ClientApp\3rdpartylicenses.txt" />
+    <None Include="wwwroot\ClientApp\favicon.ico" />
+    <None Include="wwwroot\ClientApp\index.html" />
+    <None Include="wwwroot\ClientApp\main.js" />
+    <None Include="wwwroot\ClientApp\main.js.map" />
+    <None Include="wwwroot\ClientApp\polyfills.js" />
+    <None Include="wwwroot\ClientApp\polyfills.js.map" />
+    <None Include="wwwroot\ClientApp\runtime.js" />
+    <None Include="wwwroot\ClientApp\runtime.js.map" />
+    <None Include="wwwroot\ClientApp\styles.js" />
+    <None Include="wwwroot\ClientApp\styles.js.map" />
+    <None Include="wwwroot\ClientApp\vendor.js" />
+    <None Include="wwwroot\ClientApp\vendor.js.map" />
+    <None Include="wwwroot\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <PackageReference Include="Pomelo.EntityFrameWorkCore.MySql" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\ts\principal.ts" />
+    <TypeScriptCompile Include="wwwroot\ts\produto.ts" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+
+</Project>
