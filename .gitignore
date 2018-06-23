@@ -261,4 +261,4 @@ __pycache__/
 *.pyc
 
 
-MyWebApp/wwwroot/ClientApp/*.*
+MyWebApp/wwwroot/ClientApp/*
