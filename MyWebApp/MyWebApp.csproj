@@ -1,14 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="wwwroot\ts\principal.ts" />
-    <Content Remove="wwwroot\ts\produto.ts" />
-  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\src\" />
@@ -38,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\loja\listaProduto.component.ts" />
     <TypeScriptCompile Include="wwwroot\ts\principal.ts" />
     <TypeScriptCompile Include="wwwroot\ts\produto.ts" />
   </ItemGroup>
