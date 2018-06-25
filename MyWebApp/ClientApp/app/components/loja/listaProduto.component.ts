@@ -1,4 +1,5 @@
-﻿import { Component } from "@angular/core";
+﻿import { Component, OnInit } from "@angular/core";
+import { DataService } from "../../services/dataService";
 
 @Component({
     selector: "lista-produto",
@@ -6,17 +7,19 @@
     styleUrls: []
 })
 
-export class ListaProduto {
-    public produtos = [
-        {
-            titulo: "Primeiro Produto",
-            preco: 10
-        }, {
-            titulo: "Segundo Produto",
-            preco: 20.26
-        }, {
-            titulo: "Terceiro Produto",
-            preco: 60.11
-        }
-    ];
+export class ListaProduto implements OnInit {
+    public produtos = [];
+
+    constructor(private data: DataService) {
+
+    }
+
+    ngOnInit(): void {
+        this.data.carregarProdutos()
+            .subscribe(success => {
+                if (success)
+                    this.produtos = this.data.produtos;
+            });
+    }
+
 }
