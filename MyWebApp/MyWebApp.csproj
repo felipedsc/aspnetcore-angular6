@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\model\produto.ts" />
+    <None Remove="ClientApp\app\models\produto.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,10 +38,8 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\loja\listaProduto.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\produto.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\produto.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\dataService.ts" />
-    <TypeScriptCompile Include="wwwroot\ts\principal.ts" />
-    <TypeScriptCompile Include="wwwroot\ts\produto.ts" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
