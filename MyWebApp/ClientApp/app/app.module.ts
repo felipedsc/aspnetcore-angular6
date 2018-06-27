@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { ListaProduto } from './components/loja/listaProduto.component';
 import { DataService } from './services/dataService';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -13,7 +18,10 @@ import { DataService } from './services/dataService';
     ],
     imports: [
         BrowserModule,
-        HttpModule
+        HttpModule,
+        BsDropdownModule.forRoot(),
+        TooltipModule.forRoot(),
+        ModalModule.forRoot()
     ],
     providers: [DataService],
     bootstrap: [AppComponent]
