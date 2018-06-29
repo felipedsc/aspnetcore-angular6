@@ -6,7 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\carrinho\carrinho.component.ts" />
     <None Remove="ClientApp\app\models\produto.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="node_modules\bootstrap\package.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="node_modules\bootstrap\*" />
     <None Include="wwwroot\ClientApp\3rdpartylicenses.txt" />
     <None Include="wwwroot\ClientApp\favicon.ico" />
     <None Include="wwwroot\ClientApp\index.html" />
@@ -38,9 +50,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\loja\listaProduto.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\models\produto.ts" />
-    <TypeScriptCompile Include="ClientApp\app\services\dataService.ts" />
+    <TypeScriptCompile Include="ClientApp\**\*.ts" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">

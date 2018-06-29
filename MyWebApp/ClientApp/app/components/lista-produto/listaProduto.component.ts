@@ -4,8 +4,8 @@ import { Produto } from "../../models/produto";
 
 @Component({
     selector: "lista-produto",
-    templateUrl: "listaProduto.component.html",
-    styleUrls: []
+    templateUrl: "./listaProduto.component.html",
+    styleUrls: ["listaProduto.component.css"]
 })
 
 export class ListaProduto implements OnInit {

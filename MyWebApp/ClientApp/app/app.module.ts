@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { ListaProduto } from './components/loja/listaProduto.component';
+import { ListaProduto } from './components/lista-produto/listaProduto.component';
+import { Carrinho } from './components/carrinho/carrinho.component';
 import { DataService } from './services/dataService';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -14,7 +15,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 @NgModule({
     declarations: [
         AppComponent,
-        ListaProduto
+        ListaProduto,
+        Carrinho
     ],
     imports: [
         BrowserModule,

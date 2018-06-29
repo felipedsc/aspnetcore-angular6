@@ -1,0 +1,9 @@
+﻿.produto-info {    
+}
+
+.produto-info img {
+    width: 250px;
+    height: 280px;
+    margin: 0 2px;
+    border: 1px solid black;
+}

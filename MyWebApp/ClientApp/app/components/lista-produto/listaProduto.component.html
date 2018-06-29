@@ -1,5 +1,6 @@
 ﻿<div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let p of produtos">
+    <div class="card produto-info bg-light col-sm-4 text-center" *ngFor="let p of produtos">
+        <img src="img/produto.jpg" class="img-fluid"/>
         <h3>{{p.descricao}}</h3>
         <div>{{p.nome}}</div>
         <div>Preço: {{p.preco}}</div>
