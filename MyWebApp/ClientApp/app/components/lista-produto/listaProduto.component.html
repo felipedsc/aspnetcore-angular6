@@ -1,10 +1,16 @@
 ﻿<div class="row">
-    <div class="card produto-info bg-light col-sm-4 text-center" *ngFor="let p of produtos">
-        <img src="img/produto.jpg" class="img-fluid"/>
-        <h3>{{p.descricao}}</h3>
-        <div>{{p.nome}}</div>
-        <div>Preço: {{p.preco}}</div>
+    <div class="col-sm-4" *ngFor="let p of produtos" style="margin-bottom: 10px;">
+        <div class="card" style="height: 450px;">
+            <div class="card-header">
+                {{p.nome}}
+            </div>
+            <div class="card-body">
+                <img src="img/produto.jpg" class="img-fluid" />
+                <h3>{{p.descricao}}</h3>
+                <div>Preço: {{p.preco}}</div>
+            </div>
 
-        <button id="meu-button">Comprar</button>
+            <button id="meu-button" class="btn btn-success btn-sm" (click)="adicionarProduto(p)">Comprar</button>
+        </div>
     </div>
 </div>

@@ -18,4 +18,7 @@ export class ListaProduto implements OnInit {
             .subscribe(() => { this.produtos = this.dataService.produtos; });
     }
 
+    public adicionarProduto(p: Produto): void {
+        this.dataService.adicionarProduto(p);
+    }
 }
