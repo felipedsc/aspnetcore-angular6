@@ -7,5 +7,6 @@ export class ItemPedido {
 
     constructor() {
         this.produto = new Produto();
+        this.quantidade = 1;
     }
 }

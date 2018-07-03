@@ -21,14 +21,20 @@ export class DataService {
     }
 
     public adicionarProduto(produto: Produto) {
-        let item: ItemPedido;
-        item = new ItemPedido();
+        let itemExistente = this.pedido.itensPedido.find(x => x.produto.id == produto.id);
 
-        item.produto.id = produto.id;
-        item.produto.nome = produto.nome;
-        item.produto.descricao = produto.descricao;
-        item.produto.preco = produto.preco;
+        if (itemExistente != undefined) {
+            itemExistente.quantidade++;
+        } else {
+            let item: ItemPedido;
+            item = new ItemPedido();
 
-        this.pedido.itensPedido.push(item);
+            item.produto.id = produto.id;
+            item.produto.nome = produto.nome;
+            item.produto.descricao = produto.descricao;
+            item.produto.preco = produto.preco;
+
+            this.pedido.itensPedido.push(item);
+        }
     }
 }

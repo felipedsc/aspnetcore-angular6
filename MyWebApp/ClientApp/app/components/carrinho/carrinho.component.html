@@ -4,19 +4,27 @@
             <h3>Carrinho de Compras</h3>
         </div>
         <div class="card-body">
-            <div>Contagem: {{data.pedido.itensPedido.length}} produto(s)</div>
-
+            <strong>Contagem: {{data.pedido.itensPedido.length}} produto(s)</strong>
+            <div>Total: {{data.pedido.total | currency: "R$": true}}</div>
             <div>
-                <ul>
-                    <li *ngFor="let p of data.pedido.itensPedido">
-                        <div>
-                            Produto: {{p.produto.nome}}
-                            <br />
-                            Preço: {{p.produto.preco}}
-                        </div>
-                        <hr />
-                    </li>
-                </ul>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td>Nome</td>
+                            <td>Quantidade</td>
+                            <td>Preço</td>
+                            <td>Total</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of data.pedido.itensPedido">
+                            <td>{{item.produto.nome}}</td>
+                            <td>{{item.quantidade}}</td>
+                            <td>{{item.produto.preco | currency: "R$": true}}</td>
+                            <td>{{(item.produto.preco * item.quantidade)  | currency: "R$": true}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
