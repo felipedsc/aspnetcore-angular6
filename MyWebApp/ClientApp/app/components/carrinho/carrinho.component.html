@@ -25,7 +25,10 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <a routerLink="efetivarCompra" class="btn btn-success" *ngIf="data.pedido.itensPedido.length > 0">Efetivar Compra</a>
             </div>
         </div>
     </div>
 </div>
+

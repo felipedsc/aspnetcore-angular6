@@ -11,5 +11,6 @@ export class Carrinho implements OnInit {
     constructor(private data: DataService) { }
 
     ngOnInit(): void {
+    
     }
 }

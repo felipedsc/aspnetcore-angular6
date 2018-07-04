@@ -1,0 +1,46 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <h3>Efetivar Compra</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Produto</td>
+                    <td>Quantidade</td>
+                    <td>Preço unitário</td>
+                    <td>Preço total</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data.pedido.itensPedido">
+                    <td>
+                        <img src="img/produto.jpg" class="img-fluid" />
+                    </td>
+                    <td>{{item.produto.nome}}</td>
+                    <td>{{item.quantidade}}</td>
+                    <td>{{item.produto.preco | currency: "R$": true}}</td>
+                    <td>{{(item.produto.preco * item.quantidade) | currency: "R$": true}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="col-sm-4 offset-sm-8 text-right">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>Total</td>
+                        <td>{{data.pedido.total | currency: "R$": true}}</td>
+                    </tr>
+                    <tr>
+                        <td>Frete</td>
+                        <td>R$ 0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button class="btn btn-success" (click)="onEfetivarCompra()">Comprar</button>
+            <a routerLink="" class="btn btn-info" style="margin-left: 10px;">Cancelar</a>
+        </div>
+    </div>
+</div>
