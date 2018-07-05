@@ -1,4 +1,5 @@
 ﻿import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { DataService } from "../../services/dataService";
 
 @Component({
@@ -7,16 +8,22 @@ import { DataService } from "../../services/dataService";
     styleUrls: []
 })
 
-export class EfetivarCompra implements OnInit {
-    constructor(private data: DataService) {
+export class EfetivarCompra {
+    private mensagem: string;
 
-    }
-
-    ngOnInit() {
+    constructor(private data: DataService,
+        public router: Router) {
 
     }
 
     onEfetivarCompra() {
-        alert('Efetivar Compra');
+        debugger;
+        this.data.comprar()
+            .subscribe(success => {
+                if (success) {
+                    this.router.navigate([""]);
+                    this.mensagem = null;
+                }
+            }, error => this.mensagem = "Falha ao salvar pedido");
     }
 }

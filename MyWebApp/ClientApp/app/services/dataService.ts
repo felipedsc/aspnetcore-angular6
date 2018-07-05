@@ -37,4 +37,13 @@ export class DataService {
             this.pedido.itensPedido.push(item);
         }
     }
+
+    public comprar() {
+        return this.http.post("api/pedido", this.pedido)
+            .map(result => {
+                debugger;
+                this.pedido = new Pedido();
+                return true;
+            });
+    }
 }
