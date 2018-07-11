@@ -29,9 +29,11 @@ namespace MyWebApp
             var sqlConnectionString = _configuration.GetConnectionString("MyWebAppDb");
             services.AddDbContext<MyWebAppContext>(options => options.UseMySql(sqlConnectionString, b => b.MigrationsAssembly("MyWebApp")));
 
-            services.AddMvc();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IPedidoRepository, PedidoRepository>();
+
+            services.AddMvc()
+                .AddJsonOptions(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
