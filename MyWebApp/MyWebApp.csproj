@@ -3,17 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <RuntimeIdentifiers>win10-x64;win7-x86</RuntimeIdentifiers>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap-grid.css" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap-grid.min.css" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap-reboot.css" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap-reboot.min.css" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap.css" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap.min.css" />
-    <Content Include="node_modules\bootstrap\package.json" />
-  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\lib\" />
@@ -48,6 +39,12 @@
     <TypeScriptCompile Include="ClientApp\**\*.ts" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\ClientApp\dist\out-tsc\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptTarget>ES5</TypeScriptTarget>
     <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
@@ -64,4 +61,9 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
 
+  <Target Name="ScriptPublicacao" BeforeTargets="BeforeBuild">
+    <Exec Command="npm install" />
+    <Exec Command="ng build" />
+    <Exec Command="gulp" />
+  </Target>
 </Project>
